@@ -1,0 +1,25 @@
+digraph UI_Flow {
+    rankdir=LR;
+    size="8,5";
+
+    node [shape=rect style="rounded,filled" fillcolor=lightblue];
+
+    login       [label="Login (MS/Zoom OAuth)"];
+    dashboard   [label="Dashboard (Main Menu)"];
+    templates   [label="Templates (List + Editor)"];
+    quick       [label="Quick Actions (Zoom, Follow-up, Thank You)"];
+    reminders   [label="Reminders (Track Replies, Send Reminder)"];
+    attachments [label="Attachments (Rules + Save)"];
+    settings    [label="Settings (Signature, Accounts)"];
+    draft       [label="Draft Window (Review + Send)"];
+
+    login -> dashboard;
+    dashboard -> templates;
+    dashboard -> quick;
+    dashboard -> reminders;
+    dashboard -> attachments;
+    dashboard -> settings;
+    templates -> draft;
+    quick -> draft;
+    reminders -> draft;
+}
