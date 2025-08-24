@@ -1,0 +1,15 @@
+digraph Architecture {
+    rankdir=TB;
+    size="8,8";
+
+    ui   [label="UI Layer\n(PyQt6 Desktop App)" shape=rect style=filled fillcolor=lightyellow];
+    logic [label="Core Logic\n(Python Modules)" shape=rect style=filled fillcolor=lightblue];
+    db   [label="Local DB\n(SQLite)" shape=cylinder style=filled fillcolor=lightgrey];
+    graph [label="Microsoft Graph API" shape=rect style=filled fillcolor=lightgreen];
+    zoom  [label="Zoom API" shape=rect style=filled fillcolor=lightgreen];
+
+    ui -> logic [label="User actions"];
+    logic -> db [label="Read/Write data"];
+    logic -> graph [label="OAuth2, Mail, Calendar"];
+    logic -> zoom [label="Meetings, Webhooks"];
+}
